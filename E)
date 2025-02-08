@@ -1,0 +1,62 @@
+using System;
+
+namespace b
+{
+    class Program
+    {
+        public static void Main()
+        {   
+            // Declarando variáveis que serão utilizadas
+            int numeroUsuario;
+            bool numeroPrimo = true;
+            int i = 2;
+            
+            // Metodo TryParse para conferir se o usuário digitou um número inteiro
+            while(true)
+            {
+                Console.WriteLine("Digite um número: ");
+                string entrada = Console.ReadLine();
+                
+                if(int.TryParse(entrada, out numeroUsuario))
+                {
+                    break;
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("Entrada inválida. Por favor, digite um número inteiro!");
+                }
+            }
+            
+            // Metodo para conferir se o número é primo ou não
+            if(numeroUsuario < 2)
+            {
+                numeroPrimo = false;
+            }
+            else 
+            {
+                for(i = 2; i <= Math.Sqrt(numeroUsuario); i++)
+                {
+                    if(numeroUsuario % i == 0)
+                    {
+                        numeroPrimo = false;
+                        break;
+                    }
+                }
+            }
+            
+            // Exibindo resultado
+            if(numeroPrimo)
+            {
+                Console.WriteLine("O número " + numeroUsuario + " é um número primo!");
+            }
+            else 
+            {
+                Console.WriteLine("O número " + numeroUsuario + " não é um número primo!");
+            }
+            
+            Console.Write("Pressione qualquer tecla para sair . . .");
+            Console.ReadKey(true);
+        }
+    }
+}
