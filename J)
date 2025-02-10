@@ -1,0 +1,23 @@
+using System;
+
+namespace b
+{
+    class Program
+    {
+        public static void Main()
+        {   
+            int soma = 0;
+            for(int i = 0; i <= 100; i++)
+            {
+            	if(i % 2 == 0)
+            	{
+            		soma += i;
+            	}
+            }
+            Console.WriteLine("A soma dos números pares entre 0 e 100 é: " + soma);
+            
+            Console.Write("Pressione qualquer tecla para sair...");
+            Console.ReadKey(true);
+        }
+    }
+}
