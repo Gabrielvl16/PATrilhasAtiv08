@@ -1,0 +1,46 @@
+using System;
+
+namespace b
+{
+    class Program
+    {
+        public static void Main()
+        {
+            Console.WriteLine("Digite uma sequência de números (digite 0 para finalizar): ");
+            
+            int maiorNumero = int.MinValue;  // Inicializa o maior número com o menor valor possível de um inteiro
+            int numeroAtual;
+
+            // Laço for, iniciando com o número 1 e continuando até o usuário digitar 0
+            for (;;)
+            {
+                Console.Write("Digite um número: ");
+                numeroAtual = int.Parse(Console.ReadLine());
+
+                if (numeroAtual == 0)  // Condição para sair do laço se o número inserido for 0
+                {
+                    break;
+                }
+
+                // Se o número não for 0, comparamos com o maior número
+                if (numeroAtual > maiorNumero)
+                {
+                    maiorNumero = numeroAtual;  // Atualiza o maior número
+                }
+            }
+
+            // Exibe o maior número
+            if (maiorNumero != int.MinValue)
+            {
+                Console.WriteLine("O maior número digitado é: " + maiorNumero);
+            }
+            else
+            {
+                Console.WriteLine("Nenhum número válido foi inserido.");
+            }
+
+            Console.Write("Pressione qualquer tecla para sair...");
+            Console.ReadKey(true);
+        }
+    }
+}
