@@ -1,0 +1,20 @@
+using System;
+
+namespace b
+{
+    class Program
+    {
+        public static void Main()
+        {
+        	int resultado;
+        	for(int i = 1; i <= 10; i ++)
+        	{
+        		resultado = 5 * i;
+        		Console.WriteLine("5 x "+ i +" = "+ resultado);
+        	}
+
+            Console.Write("Pressione qualquer tecla para sair...");
+            Console.ReadKey(true);
+        }
+    }
+}
