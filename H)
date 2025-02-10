@@ -1,0 +1,36 @@
+using System;
+
+namespace b
+{
+    class Program
+    {
+        public static void Main()
+        {	
+        	int numeroUsuario;
+        	for(;;)
+        	{
+        		Console.WriteLine("Digite um número: ");
+        		string entrada = Console.ReadLine();
+        		
+        		if(int.TryParse(entrada, out numeroUsuario))
+        		{
+        			break;
+        		}
+        		else 
+        		{
+        			Console.Clear();
+        			Console.WriteLine("Entrada inválida. Por favor, digite um número ");
+        		}
+        	}
+        	
+        	Console.WriteLine("Os números divisiveis por " + numeroUsuario +" são: ");
+        	for(int i = 1; i <= numeroUsuario; i++)
+        		if(numeroUsuario % i == 0)
+        	{
+        		Console.WriteLine(i);
+        	}
+            Console.Write("Pressione qualquer tecla para sair...");
+            Console.ReadKey(true);
+        }
+    }
+}
